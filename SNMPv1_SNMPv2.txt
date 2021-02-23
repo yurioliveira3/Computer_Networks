@@ -1,0 +1,28 @@
+Cite 5 diferenças entre o SNMPv1 e v2.
+
+1.SNMPv2 - suporte ao SMIv2
+    Introdução de novos tipos de dados com 64 bits
+    Gauge e Counter -> Gauge32 e Counter32
+
+2.SNMPv2 - Introdução de novas PDUs
+    GetBulkRequest[5]
+    InformRequest[6]
+
+3.SNMPv2 - Novas entradas na árvore de internet
+    security {1.3.6.1.5} {internet 5}
+    snmpV2 {1.3.6.1.6} {internet 6}
+
+4.SNMPv2 - Funcionalidades de autenticação e criptografia de mensagens
+    (RFC 1441) - SMPv2p - Não implementada, nivel de complexidade elevado
+    (RFC 1909) - SMPv2u - Não aceita, devido a sobrecarga no gerenciamento
+    (RFC 1901) - SMPv2c - Basicamente a mesma ideia do v1, utilização da string de comunidade
+
+    O SMPv2c, é utilizado nos dias atuais
+
+5.SNMPv2 - Adição de novos tipos de erros, desmembramento de 1 erro em vários erros mais específicos
+    Desta forma o gerente tem uma precisão e um controle maior dos problemas que ocorreram
+
+6.SNMPv2 - GetRequest - Mecanismo de excessão
+    Quando uma excessão é encontrada, esta é sinalizada no valor do objeto na VarBindList
+    Não é mais atômico
+

@@ -1,0 +1,33 @@
+Principais Requisitos:
+    - Confidencialidade - Criptografia
+    - Integridade - Segurança de Alteração
+    - Autenticação - Meios para assegurar a identidade do transmissor e receptor
+
+Outros Requisitos:
+    - Acesso e disponibilidades - Serviços podem ser acessiveis a usr autorizados
+    - Identificação - Os meios que os usuairos usam para se identificar no sistm 
+    - Autorização - Direitos e permissões de um usuário 
+    - Privacidade - Nível de privacidada de um usuário 
+    - Segurança Operacional - Evitar que as redes sejam comprometidas
+
+Ataque de intercepção de mensagens:
+    - Inserção ativa de mensagens na conexão 
+    - Personificação [MITM] - falsificação (spoof) endereço de origem no pacote 
+    - Hijacking - Assume a conexão removendo o transmissor ou receptor e se inserindo no lugar 
+    - Negação [DDos] - Impede que um serviço seja utilizado (sobrecarga de recursos)
+        - Quando um serviço de DNS fica off, todas as aplicações que pertencem a ele, também ficam off
+    
+Principios de Criptografia: 
+    - Chave simétrica:
+        Vantagens
+            Fácil implementação;
+            Rápida.
+        Desvantagens
+            Mesma chave utilizada tanto na criptografia quanto na descriptografia;
+            Necessita de um canal seguro para enviar a chave.
+
+    - Chave publica [assimétrica]:
+        Vantagens 
+            Não á necessidade de um canal seguro para troca de chaves.
+        Desvantagens
+            Performance do sistema cai bruscamente quando existe uma grande quantidade de dados a serem descriptografados.

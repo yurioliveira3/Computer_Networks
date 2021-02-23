@@ -1,0 +1,71 @@
+GERENCIAMENTO DE FALHAS:
+> Fundamental para garantir que os usuarios não percebam interrupções no serviço
+    - Quando perceberem que seja minima (aumento de resposta)
+> Analise da causa raiz (RCA)
+> Manutenção de uma base de log's 
+> Trouble ticketing 
+    - Usuarios podem reportar problemas
+> Gerenciamento proativo 
+    - Ações que previnem problemas 
+
+Monitoramento:
+> Polling (consulta periódica aos elementos de rede)
+    - Identifica problemas rapidamente
+    - Tradeoff [Tempo entre consultas x Consumo de banda]
+
+> Alarmes (transmissão de eventos criticos)
+    - Mensagens não solicitadas da rede que indicam que um 
+    evento não esperado aconteceu 
+        -- Exigem uma ação imediata do sys admin 
+    - Funções Básicas:
+        -- Coleta de alarmes 
+        -- Visualização
+    - Funções Avançadas:
+        -- Filtragem 
+        -- Correlação 
+
+    - Construir uma base histórica de alarme
+
+    - Topologias com mapa da rede que auxiliam no monitoramento
+
+    - A severidade do alarme indica seu grau de impacto
+        -- Quando mais alto mais critico 
+
+> Visao de mapas da rede 
+    - Facilita o processo de identificação das falhas, indicando 
+    os "hots spots" geográficos
+
+> Correlação de eventos
+    - Evita sobrecarga, gastando seu tempo com coisas importantes
+        -- Serie de eventos que podem ser sumarizados em 1 
+        facilitando a visão dos problemas 
+
+> Minimizar o impacto de falhas nos usuários
+
+> Caso ele perceba a falha, que ela seja minimo
+
+> FORMAR DE DIMINUIR IMPACTO NOS USUÁRIOS
+    - Diminuir o tempo entre detecção/análise/correção 
+
+    - Gerenciamento de falhas é proativo
+        -- Onde os problemas que acontecem na rede são verificados sempre 
+
+    - Machine Learning 
+        -- Para detectar os problemas que aconteceram rapidamente, e apresen-
+        tar as soluções
+
+    - I.A. que gerencia a rede
+
+Supondo que você tenha capacidade de programar um sistema gerência, ou mesmo o 
+dispositivo de rede, cite uma estratégia que poderia adotar para diminuir o 
+custo de monitoramento, porém sem perder a precisão dos dados e eventos monitorados.
+Considere que esta estratégia deve levar em consideração as características do 
+gerenciamento de falhas.
+
+Creio que uma das melhores estratégias, seria a união da técnica de transmissão de eventos críticos, 
+com o gerenciamento proativo, pois assim, não se faz necessário o polling, o que reduz muito os custos,
+e o tratamento de muitos problemas, é resolvido de uma forma automática, seguindo algum script previamente 
+desenvolvido. E em relação a gerência dos alarmes que estes eventos podem gerar, o uso de correlação deles,
+auxilia na visualização, garantindo um pré-processamento dos eventos, evitando sobrecarga ao gerente,
+sumarizando "N" problemas, e um único.
+

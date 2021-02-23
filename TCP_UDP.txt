@@ -1,0 +1,29 @@
+1) Quais campos o protocolo TCP possuem em seu cabeçalho que o UDP não tem?
+- Numero de sequencia (aleatório, quantidade de bytes que ja foram transportados);
+- Numero de confirmação (cada segmento pode gerar uma msg de retorno ao servidor);
+- Tamanho do cabeçalho TCP (Quantidade de 4 bytes de um cabeçalho);
+- Campos reservados (Não é utilizado);
+- Flags do TCP;
+- Tamanho da janela (controle de fluxo do TCP, controle da taxa de transmissão de dados);
+- Urgent pointer (Válido somente quando a flag urgent está ativa, indica quando no campo de opções existe algum valor a ser processado, antes dos dados);
+- Opções (40 bytes com opções que podem ser inclusas no TCP).
+
+2) O que é o pseudocabeçalho usado pelos protocolo TCP/UDP para calcular o checksum?
+É um resquísio histórico que se manteve ao longo dos anos, pois antigamente o protocolo de transporte englobava funções de endereçamento (IP), e 
+funções de transporte (TCP/UDP), ou seja, são campos do protocolo IP + alguns campos do protocolo TCP/UDP.
+-IP 
+    - Endereço de origem
+    - Endereço de destino
+    - Bits que referenciam o protocolo de transporte empregado
+-TCP/UDP
+    - Comprimento total/Tam. da Janela
+
+3) Por que o TCP utiliza um número de sequência inicial aleatório? 
+- Tomaram essa decisão por conta de uma vulnerabilidade que poderia ser explorada, o roubo de conexão TCP.
+- Por exemplo, se o atacante sabe a sequencia de um pacote que o servidor está esperando, ele pode gerar um com 
+o sequencial esperado, e enviar ao servidor, derrubando o segmento de um cliente real, pois o numero de sequencia 
+está repetido na rede.
+
+- Então quando cliente inicia um numero de sequencia aleatório, fica mais dificil para o 
+atacante, saber qual o numero seq que ele pode gerar, que o servidor pode aceitar.
+

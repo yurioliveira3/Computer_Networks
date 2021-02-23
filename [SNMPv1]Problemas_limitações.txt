@@ -1,0 +1,17 @@
+Cite quais são os principais problemas/limitações do SNMPv1:
+
+Não suporta a busca em tabelas, permite a existência de apenas um gerente por sistema e que não se pode criar 
+ou excluir objetos dentro do sistema.
+
+Problemas de segurança e de transferência eficiente, ou seja, possui ineficiência de aquisição de grandes 
+quantidades de informações de gerência.
+
+Limitações de desempenho para obtenção de requisições explícitas, e falta de suporte à comunicação 
+gerente-gerente.
+
+Trap SNMP não é confirmado, o agente até pode enviar a mensagem de Trap ao gerente, mas não saberá se ele a 
+recebeu, podendo esta mensagem ser perdida na rede, e a anomalia não ser corrigida.
+
+A autenticação do protocolo é deficiente, uma vez que ela é baseada nas chamadas comunidades ("community based"),
+assim, alguns dados do protocolo circulantes na rede podem ser lidas por pessoas estranhas ao sistema em questão.
+

@@ -1,0 +1,9 @@
+1) Qual a principal vantagem do mecanismo Selective Repeat com relação ao Go-Back-N?
+A principal vantagem é a possibilidade de recebimento de pacotes fora de ordem, pois como o tamanho da 
+janela de recepção é igual a de transmissão, o numero de retransmissão de quadros diminui drasticamente.
+    
+2) Qual o conceito de piggybacking?
+Na comunicação full duplex, dados uteis transitam nos dois sentidos, ou seja, 
+pacotes com dados dados e controle estão presentes simultaneamente, na mesma mensagem.
+Controle - Cabeçalho (ACK, NACK...)
+Dados - Payload 

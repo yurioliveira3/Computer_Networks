@@ -1,0 +1,100 @@
+DOMAIN NAME SYSTEM (DNS)
+- Sistena de nomes de domínio 
+    - É um programa de suporte usado por outros programas
+
+- É basicamente uma base de dados distribuída,
+    com o nome e o respectivo host (ip) 
+    [Não válido para servidores raiz] 
+
+- Não posso ter um único nome, para 2 hosts 
+
+Estratégias de organização do DNS:
+    - Espaço de notas planos:um nome único sem estrutura 
+    - Espaço de nomes hierárquivo: cada nome é constituído por várias partes individuais
+        - Parecido com rede e sub-rede 
+        - Melhor e mais utilizado
+    
+Espaço de noms de domínios 
+    - Arvore de nomes 
+    - Até 128 níveis para cada segmento
+        - 1 nome dividio em 127 partes diferentes 
+    - Cada nós, tem um nome (uma varchar(60)), rótulo
+    
+    - Um label .com, por exemplo, compôe, todos os outros 
+        que estiverem abaixo, sempre aparecendo o .com
+    
+    - Um domínio é uma subarvore de todo o espaço de nomes 
+        que pode ser empregado 
+
+- A raiz de toda a hierarquia tem um label vazio, por exemplo:
+    "challenger.atc.fhd.com", o ultimo nível não é o .com, mas sim 
+    um "." no final, "challenger.atc.fhd.com."
+
+- FQDN (Nome de Domínio Totalmente Qualificado):
+    - Contém o nome completo de um host:
+        - Todos os labels, do mais especifico ao mais genérico
+            - ecomp.ufsm.br
+
+- PQDN (Nome de Domínio Parcialmente Qualificado):
+    - Começa em um nó, mas não termina na raiz 
+        - Usado normalmente quando o nome pertence ao mesmo site 
+        de um cliente
+        - O resolvedor fornecerá a parte faltante (sufixo) para 
+        criar um FQDN
+            - ecomp. (O PQDN irá completar com o .ufsm.br.)
+
+- Domínios de país: 
+    - .BR, .US, ... [ENCURTADORES]
+
+- Domínios reversos: 
+    - Utilizado para associar um endereço a um nome de domínio 
+    
+Tipos de servidores DNS, que fazem parte da hierarquia DNS:
+
+Servidor raiz 
+    - Não faz tradução de domínio (não sabe, mas sabe quem)
+    - Responsavel por repassar requisições, para servidores (TLD) 
+    
+
+Servidor de alto nível (TLD)
+    - Responsável pelos domínios genéricos, de país e inversos
+
+Servidor autoritativos
+    - Mantido pelas próprias organizações, que possuem N serviços
+        - EX: O domínio ufsm, possui diversos sub-domínios, que são
+        englobados dentro deles 
+
+    - Estes servidores podem ser contratados
+        - EX: 8.8.8.8 ou 1.1.1.1
+
+Servidor DNS local
+    - Não pertencem á cadeia de servidores, mas contribuiem com o
+    serviço:
+        - Funciona como um CACHE de um provedor de internet
+        - Responsável por tornar o sistem mais eficiente
+
+13 srv ou 937?
+    Anycast!
+    - One to one fo many 
+    - Muitos destinos são identificados como o mesmo endereço 
+    - O srv raiz que fica em POA, é o mesmo de Londres  
+
+Tipos de consultas:
+    - Iterativas:
+        A requisição sempre é para um srv local, que irá sol para 
+        um servidor raiz, que então irá orientar para o TLD
+    
+    - Recursiva: 
+        Ao invés do meu servidor local concentrar as requisições,
+        ele delega para um entidade, que vá retornar a tradução
+
+
+[CABEÇALHO]
+    - Identificação: Numero aleatório para saber a qual req ele pertence
+    - Flags: Consulta, ou resposta e carrega se é itertativa ou recursiva
+    - Nome do domínio do qual eu quero fazer a consulta 
+    - Resposta para o nome da consulta 
+
+[RFC]
+    - DOMAIN NAMES - IMPLEMENTATION AND SPECIFICATION
+        - https://www.ietf.org/rfc/rfc1035.txt

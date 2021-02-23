@@ -1,0 +1,15 @@
+Pretty good privacy (PGP):
+- Esquema de codificação de e-mail da internet;
+- Fornece confidencialidade, autenticação do emissor e integridade.
+- Basicamente o PGP é o emprego de criptografia simétrica, de chave pública, função hash e assinatura digital.
+
+Funcionamento:
+1. Cálculo do Hash da mensagem;
+2. Cifra do hash com a chave privada [Assinatura digital];
+3. Embaralhamento da mensagem com a chave simétrica;
+4. Solicitação da chave pública, fornecida pela entidade autenticadora;
+5. Cifra da chave simétrica, com a chave pública do destinatário;
+6. Adicionada a chave cifrada a mensagem embaralhada.
+
+
+O destinatário realiza o mesmo processo de forma inversa.

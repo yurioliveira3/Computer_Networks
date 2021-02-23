@@ -1,0 +1,56 @@
+ATRIBUTOS/CARACTERISTICAS de um fluxo:
+- Confiabilidade
+    - Pacotes perdidos na rede
+- Atraso
+    - Tempo para um pacote trafegar pela rede
+- Jutter 
+    - Variação do atraso
+- Vazão
+    - Quantidade de dados gerados para uma aplicação 
+    - bits/s
+
+Técnicas empregadas para melhorar a qualidade do serviço:
+- PROGRAMAÇÃO
+    - Ajuste do algoritmo de buffers (filas) dos roteadores:
+        - FIFO
+        - Fila de prioridades 
+        - Fila ponderada
+
+- FORMATAÇÃO DE TRÁFEGO
+    - Controlar a quantidade e a velocidade com que o tráfego 
+    é transmitido pela rede:
+        - Exemplo do balde, com vazão constante
+
+- RESERVA DE RECURSOS
+    - Melhora o QoS reservando buffers, banda, CPU...
+    - Garantia de processamento de algum pacote especifico...
+    
+- CONTROLE DE ADMISSÃO
+    - Mecanismo utilizado por um ativo para aceitar ou 
+    rejeitar um fluxo usando parâmetros predefinidos
+
+Diferenças entre serviços integrados e serviços diferenciados.
+INTEGRADOS (IntServ)
+    - Mecanimos utilizados para reservas de recursos
+    - Origem que configura os routers intermediários
+    - Problema de escalabilidade, cada router deve armazenar 
+    informações de cada fluxo (sobrecarga de recursos)
+    - Circuito virtual entre origem e destino, para atender fluxo 
+    - Acessar cada um dos routers, entre org e dst, reservando os 
+    recursos para um determinado fluxo de A para B 
+    - Protocolo Resource Reservation Protocol (RSVP)
+        - Forma utilizada para que as aplicações especifiquem o 
+        fluxo, definindo caracteristicas do tráfego e recursos 
+        que serão utilizados. 
+    - Problema, só existem 2 classes de serviços 
+        - Garantidos: Tráfego em tempo real 
+        - Controlados por carga: Aceitam atraso, mas não são sen
+        siveis a sobrecarga e perigo de perda de pacotes 
+
+DEFERENCIADO (DiffServ)
+    - Aplicações multicast
+    - Cliente especifica caracteristicas do fluxo
+    - Descrições de recursos são enviados dos clientes ao router
+    - Tratamento dos recursos é feito pelo router
+    
+    

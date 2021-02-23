@@ -1,0 +1,32 @@
+O que é gerência de redes: [DEFINIÇÃO ABSTRATA]
+
+É a atividade que garante a operação/funcionamento de uma infraestrutura de comunicação.
+
+Essa que deve atender requisitos satisafatórios de seus usuários.
+
+Os desafios são inumeros, dependendo principalmente das necessidades do usuário. 
+    
+Conjunto de atividades que atenda adequadamente e esteja disponível para seus usuarios
+
+Monitoramento de indicadores, por exemplo ms
+
+Adequação prévia da infra, para atender perfil de usuarios, trafego, aplicações.
+
+Requisitos de monitoramento
+
+Operador de rede
+
+Planejamento, monitoramento, configuração
+
+[DEFINIÇÃO FORMAL]
+Refere-se as atividades métodos, procedimento e ferramenteas, que possibilitam a operação,
+administração, manutenção e provisionamento das redes de comunicação.
+
+[RESPOSTA]:
+É toda e qualquer operação de administração em uma infraestrutura de comunicação, onde essa
+gerência deve atender suficientemente requisitos dos clientes/usuários que a utilizam.
+
+Adequando equipamentos para atenderem aplicações, tráfego, usuário, sempre pensando em atingir
+um ponto máximo de performance, em relação a redução de problemas da rede. Utilizando de 
+monitoramento, com indicadores acertivos, planejamento e provisionamento adequado.
+

@@ -1,0 +1,25 @@
+Diference gateways WS/SNMP em nível de protocolo, de objeto e de serviço.
+
+protocolo:
+    A grande diferença é em relação ao tamanho das mensagens que são transportadas via SNMP ou WS.
+    SNMP foi projetado para ser extremamente leve, possui um cabeçalho pequeno, roda em cima de UDP, também não possui 
+    um conceito de conexão, construido para não onerar o dispositivo.
+
+    Já os WS, no inicio para as mensagens SOAP, para todos os parâmetros que estão sendo invocados, como também para as 
+    funções, tudo era transportado por um documento XML, além de que essas mensagens rodavem em cima de um protocolo http,
+    do qual também possui seu cabeçalho, que por sua vez roda sobre o protocolo TCP.
+
+    Então, resumindo, se formos comparar uma mesma mensagem implementada, em WS e uma em SNMP, poderemos verificar que a
+    em WS, irá consumir muito mais banda.
+
+objeto:
+    Aqui a diferença ja é relacionada a recuperação dos objetos, enquanto que para o SNMP, eu teria que realizar diveros 
+    get ou getnext, no WS bastaria uma operação get, por exemplo um GET('ifStatus') no SNPM, se chamaria GetIfStatus() no 
+    WS, o se que torna menos oneroso para a máquina, reduzindo a sobrecarga da rede.
+
+serviço:
+    Em nível de serviço, ao invés de manipular vários objetos para executar um script (da MIB), basta chamar uma 
+    operação ScriptRun() do gateway, permitindo realizar integrações e ações de mais alto nível, de uma forma simultânea.
+    Então com o gateway eu tenho um dispositivo intermediário que continua se comunicando com o SNMP, porém ele é capaz de
+    agrupar as informações e fazer um processamento adicional das informações, para disponibiliza-las para os outros 
+    dispositivos

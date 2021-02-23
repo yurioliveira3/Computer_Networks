@@ -1,0 +1,16 @@
+Protocolo IP é do tipo Best Effort:
+Sim, pelo fato de não ser confiável, pois não oferece nenhuma segurança, podemos dizer que ele é do tipo que utiliza o 
+serviço de melhor esforço (Best Effort), que provê simplesmente uma conectividade básica, totalmente carente de garantias.
+Por exemplo, em situações de congestionamento, quando a rede está sobrecarregada, os pacotes podem ser descartados sem 
+nenhum tratamento/aviso, ou também, quando o pacote tem seu tempo de vida excedido, antes de ser entregue ao destino, ele
+simplismente é perdido, sem nenhum retorno.
+
+ICMP resolve estas "limitações"?
+O ICMP, em si, não resolve os imperfeições do protocolo IP, mas ajuda a identifica-las, indicando problemas que antes não
+eram reportados, ele possui tipos de erros específicos, esses que podem ser das classes error reporting ou query message,
+dos quais auxiliam o gerente da rede a identificar problemas, e tratá-los.
+Por exemplo, nas situação de descarte de pacotes, citada no segundo parágrafo, o ICMP retorna sempre uma mensagem do tipo 4
+(source quench) para o host, alertando que devido a alguma razão o pacote foi descartado, facilitando o tratamento deste 
+problema, onde o gerente pode programar para que seja enviado novamente o pacote depois de um tempo, outro exemplo que foi 
+citado acima é o de tempo de vida excedido, do qual no ICMP, retorna uma mensagem do tipo 11 (time exceeded), possibilitando
+um tratamento posterior, permitindo uma revisão na rede, ou no tempo de vida dos pacotes.

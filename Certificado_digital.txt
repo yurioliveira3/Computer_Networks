@@ -1,0 +1,35 @@
+Distribuição de chaves
+
+Problema da chave pública:
+Quando o receptor obtem a chave publica do emissor (de um site web, email),
+como ela sabe se é a chave do emissor e não de outra pessoas?
+ - Solução:
+    AUTORIDADE DE CERTIFICAÇÃO CONFIÁVEL (CA)
+
+CA:
+- Entidade confiável, seria um cartório online 
+- Autentica o autor do arquivo
+
+A CA é responsável pela distribuição de certificados digitais.
+
+O certificado digital é a chave publica do receptor criptografada por uma entidade 
+certificadora
+
+CA possui uma recursao de até 7x, o que torna mt dificil a interceptação de mensagens.
+
+RESUMO:
+
+Assinatura digital:
+    É a maneira de assinar um documento eletrônico que precisa transitar pela rede;
+
+    E termos mais técnicos, é o resumo da mensagem (hash), assinado com a chave privada do 
+    transmissor.
+
+Cerificado digital:
+    Basicamente, é um arquivo eletrônico que serve como uma identidade que possibilita identificar 
+    uma pessoa, seja ela física ou jurídica, garantindo autenticidade de toda a informação trocada;
+
+    Em termos mais técnicos, o certificado é uma chave pública que assina digitalmente uma mensagem.
+
+Estes termos estão sempre ligados, já que toda assinatura digital está associada a um certificado 
+digital e, é por meio dele, que os dados do usuário são protegidos, minimizando o risco de violação.

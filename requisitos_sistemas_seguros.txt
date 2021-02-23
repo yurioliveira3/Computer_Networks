@@ -1,0 +1,40 @@
+Principais requisitos de sistemas seguros:
+    1. Confidencialidade
+        Diz respeito a criar uma forma de garantir que apenas o transmissor 
+        e o receptor de uma comunicação tenham formas de compreender o conteudo
+        das mensagens que transitam na rede.
+        
+        Resumindo, ela diz respeito a construir formas de evitar que uma pessoa
+        não autorizada tenha acesso aos dados transmitidos.
+
+            - Criptografia
+
+    2. Integridade
+        Representa a garantia de que os dados não foram alterados em uma transmissão,
+        complementa-se com a confidencialidade.
+
+        Resumindo, se refere a garantia de que as informações transmitidas não foram 
+        alteradas.
+
+    3. Autenticação
+        Formas que são utilizadas para assegurar que uma entidade consiga comprovar 
+        sua identidade.
+
+        Resumindo, são forma de confirmar que é o autor do pacote, ou informação...
+
+            - Certificados e assinatuas digitais
+
+Outros requisitos:
+
+- Acesso e disponibilidade: Serviços acessiveis e disponiveis para usuarios permitidos;
+- Itenficiação: Meios que o usuario podem comprovar sua identidade;
+- Autorização: Direitos e permissões de um usuário;
+- Privacidade: Nivel de privacidade que um usuario possui;
+- Segurança operacional: Evitar que redes conectadas à internet sejam comprometidas por
+atacantes.
+
+CIFRA = ALGORITMO DE CRIPTOGRAFIA 
+CHAVE = INFORMAÇÃO UTILIZADA COMO ENTRADA PARA A CIFRA 
+
+CRIPTOGRAFIA [F(K,M)] = TEXTO + CIFRA + CHAVE  
+

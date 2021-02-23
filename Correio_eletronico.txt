@@ -1,0 +1,47 @@
+MTA client 
+ - Push messages for the MTA server
+
+MAA client 
+ - Pull messages from the MAA server 
+
+[LOCAL_PART]@[DOMAIN_NAME]
+    '           '
+    '-> Addr of the mailbox on the mail server 
+                '
+                '-> Domain name of the mail server
+
+O correio eletronico foi projetado para ser simples, porém por 
+padrão pode enviar apensas mensagens ASCII NVT de 7 bits.
+Mas hoje em dia nós enviamos musica, pdf, diversos arquivos, então 
+para resolver isso, foi criado o MIME.
+
+Multipurpose Internet Mail Extensions
+    - Protocolo complementar para converter dados não-ASCII para ASCII
+    - Possui um pequeno cabeçalho, com o tipo ou subtipo de dados 
+
+SMTP (Simple Mail Transfer Protocolo)
+    - Comunicação entre cliente e servidor
+    - Envio de MSG 
+
+Para realizar o download dessas MSG, podemos utilizar 2 protocolos 
+    - POP [Mais simmples] - [Depreciado]
+        - TCP 110
+        - Dois modos de operação 
+            - Keep 
+            - Delete
+
+    - IMAP [Mais sofisticado]
+        - TCP 143
+        - Suporte a busca antes de baixar um email
+        - Verificar um cabeçalho antes de baixar 
+        - Criar pastas no SRV 
+        - Baixar parcialmente, 'x' bytes
+
+File transfer protocol (FTP)
+    - Abre 2 conexoes TCP 
+        - 1 mensagens de controle (P, 21)
+        - 1 mensagens de dados (P. 20)
+    - Principais comandos 
+        - RETR: Copiar do srv p cli 
+        - STOR: Copiar do cli p srv 
+        - LIST: Listar os nomes de arquivos e dir (tratados como arquivos)

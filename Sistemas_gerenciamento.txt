@@ -1,0 +1,30 @@
+
+Gerenciar uma rede envolve:
+
+Monitorar, analisar e configurar os recursos gerenciados
+ - Agentes: disp as info dos recursos gerenciados
+ - Plataformas e aplicações de gerenciamento: acessam e analisam as informações
+
+Plataforma de gerenciamento:
+ - Agrega aplicações
+
+
+Principais aspectos que devem ser observados por administradores de rede 
+ao escolher uma plataforma de gerenciamento:
+
+- Flexibilidate:
+    - Deve ser adaptável para o cenário de tecnologia atual
+
+- Integração:
+    - Integrável em um ambiente de gerenciamento, ou funcionar como um módulo de Integração
+
+- Segurança:
+    - Flexibilidate no nível de refinamento de ações que podem ser tomadas
+
+- Fecilidade de uso:
+    - A interface deve ser adequada ao grau de conhecimento dos usuarios
+
+- Viabilidade:
+    - Custos ligados ao uso da plataforma, balanço dos benefícios e funcionalidades, com o custo associado a plataforma.
+
+- REDES DE COMPUTADORES TRABALHA COM UMA JANELA TEMPORAL LONGA, DE 10 A 15 ANOS

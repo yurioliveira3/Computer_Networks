@@ -1,0 +1,13 @@
+TAHOE:
+É a primeira implementação do TCP a incluir o controle de congestionamento.
+Utiliza algoritmos de Slow Start, Congestion Avoidance e Fast Retransmit, juntamente com modificações no tempo RTT (Round Trip Time).
+A estratégia de transmissão era feita de acordo com o "go-back". No caso do Reno, que utiliza o Fast Retransmit, a transmissão de um segmento perdido é disparada e executada depois que três reconhecimentos duplicados são recebidos antes do timeout ser alcançado.
+Como desvantagem, dispara várias vezes o algoritmo de Slow Start, diminuindo o desempenho da rede.
+
+VEGAS: 
+Implementação que tem o objetivo de melhorar o desempenho da Reno. 
+Pois tanto Tahoe, quando Reno, reagem ao congestionamento, já Vegas, tenta evitar o congestionamento de forma pró-ativa. As alterações acontecem no transmissor, pois no receptor, as políticas continuam sendo as mesmas da Reno. O principal diferencial desta implementação é detectar o congestionamento nos roteadores entre a fonte e o destino antes de ocorrer a perda de pacotes e redução da taxa linearmente, quando o timeout ocorre.a
+Também introduz modificações na slow-start, para evitar gerar congestionamento na rede aumentando demais a janela de congestionamento. A janela de congestionamento só aumenta exponencialmente a cada RTT.
+
+Na maioria das vezes o TCP Vegas, é mais eficiente quando a perda de pacotes, comparado ao Tahoe por exemplo, pois ele é superior em relação aos cuidados nas perdas de pacotes.
+Detectando e retransmitindo pacotes perdidos, muito antes de ocorrer o timeout, realizando um número menor de retransmissões, contribuindo para prevenir congestionamentos.

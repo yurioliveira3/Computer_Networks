@@ -1,0 +1,48 @@
+[OAMP&T]
+Operação:
+    Manter a rede operando, monitorar alarmes, observar intrusões
+Administração:
+    Controlar o que tem na rede, usuarios e operações 
+Manutenção:
+    Reparar falhas/atualiações.
+Provisionamento (configuração):
+    Configuração da rede para fornecer serviços a clientes.
+Troubleshooting:
+    Os usuarios reportam problemas da infraestrutura.
+
+[FCAPS]
+Falhas [F]:
+    Detectar, isolar e eliminar falhas
+    Eventos que trazem efeitos negativos, ex link caiu
+Configuração [C]:
+    Ajustar parametros de gerenciamento (provisionamento)
+Contabilidade [A]:
+    Monitorar estatisticas de uso dos usuarios
+Desempenho [P]:
+    Garantir que o desempenho da rede fique dentro dos 
+    niveis aceitaveis
+Segurança [S]:
+    Controlar acesso aos recursos da redes
+    Decidir quem acessa a rede
+
+Levando em consideração o slide 5 apresentado em aula, de uma forma bem abrastata, o paralelo entre o OAMP&T e o FCAPS:
+
+O = FP
+A = APS
+M = FCPS
+P = C
+T = FA
+
+Sendo que a esquerda temos o OAMP&T, e a direita o que se encaixa do FCAPS.
+
+Uma das atividades mais semelhantes, é dada pelo paralelo entre Provisionamento ﻿e﻿ Configuração, pois o Provisionamento,
+representado pela letra P (OAMP&T),  é basicamente a atividade de ajuste da rede, para que seja possível fornecer serviços 
+dela aos clientes, já a Configuração, representada pela letra C (FCAPS), trata-se de realizar exatamente a mesma operação 
+descrita no provisionamento.
+
+Outro paralelo onde as atividades são muito semelhantes, ocorre entre a Operação e Falhas/Desempenho, pois a Operação, 
+representado pela letra O (OAMP&T), tem por prioridade manter a rede operando corretamente, monitorando indicadores/alarmes,
+além de observar intrusões, detectando e eliminando possiveis falhas, já nas Falhas, representadas pela letra F (FCAPS),
+compete a detectar, isolar e eliminar falhas, evitando eventos que tragam algum impacto negativo para a operação, já o 
+Desempenho,  representado pela letra P (FCAPS), de Performance, vai de encontro com a questão de garantir que o desempenho
+da rede esteja dentro de níveis aceitaveis, assegurando que a rede opere corretamente.

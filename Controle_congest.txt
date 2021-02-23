@@ -1,0 +1,86 @@
+congestionamento ocorre quando a carga (pacotes enviados), for maior que a capacidade de
+rede (número de pacotes que ela é capaz de tratar)
+
+Controle, refere-se aos mecanismos e técnicas para controlar/manter a carga abaixo da 
+capacidade máxima
+
+Então, objetiva evitar um congestionamento do tráfego de dados na rede.
+
+Principais Métricas:
+    Taxa de dados média: n de bits transmitidos durante um certo período, por um periodo
+
+    Taxa de dados de pico: taxa de dados máxima do tráfego
+
+    Tamanho máximo da rajada: período máximo que o tráfego é gerado na taxa de pico 
+    - Mais importante do que a taxa e dados de pico
+
+    Largura de banda efetiva: quanto a rede precisa alocar para o fluxo de tráfego.
+    - Cálculo baseado nas 3 métricas anteriores
+
+Perfis de tráfego: 
+    Taxa de bits constante (Constant Bit Rate - CBR)
+    Taxa de bits variável (Variable Bit Rate - VBR) [ MAIS EMPREGADO - FILAS DE PACOTES]
+    Rajadas
+        - O perfil mais complicado, a rede tem que reformular o tráfego
+        - Uma das principais causas de congestionamento
+
+O congestionamento ocorre por conta dos buffers (roteadores e comutadores) que retêm os 
+pacotes antes e depois do processamento [ Dentro de todo dispositivo existe um buffer ]
+    - O buffer perfeito teria tamanho 0 
+
+Existem 2 técnicas clássicas para evitar isso, ajustando as filas do router:
+    - setar o tamanho da fila para 0, ou seja, não irá haver enfileramento nunca
+    - emprego de prioridades para certos pacotes que entram na fila
+
+Principais Características do congestionamento:
+    - Delay muito alto, o atráso do pacote é infinito, ou seja, os pacotes estão sendo 
+    dropados
+    - Throughput muito baixo, a vazão decai, pois o pacote é dropado, e tem que ser 
+    enviado novamente
+
+TÉCNICAS QUE PODEM SER EMPREGADAS: 
+OPEN-LOOP - TENTA PREVENIR O CONGESTIONAMENTO
+CLOSE-LOOP - TRATA O CONGESTIONAMENTO
+
+- Politicas de retransmissão de pacotes [temporizadores devem ser ajustados de forma
+dinâmica, otimizando a eficiência para evitar o congestionamento]
+- Politica de janela
+    - GO-Back-N [2^n]-1
+    - Selective Repeat [2^[n-1]
+- Policita de descarte, escolher quais pacotes serão dropados
+- Policita de adimissão, os ativos podem verificar os recursos necessários para um 
+fluxo, antes de admiti-lo na rede
+- Contrapressão [redes virtuais], avisado aos prox comutadores a sobrecarga
+- Pacotes de controle - Aviso de descarte de pacotes, para o roteador origem
+
+Sinalização Implícita: 
+    A origem deduz que existe um congestionamento observando "sintomas" da rede
+        EX: Atraso no recebimento da uma confirmação
+
+Sinalização Explícita:
+    Semelhante ao método de controle, utiliza piggybacking
+        - Direta: avisa o destion, que pode haver um atraso nas informações
+        - Inversa: alerta a fonte de que há congestionamento
+        
+No TCP, a janela de tranmissão pode ser usada para controlar congestionamento
+na rede (não apanas para fazer controle de fluxo)
+
+A janela é definida pelo menos de dois valores: rwnd, cwnd
+
+Para o TCP, existem 3 principios básicos de políticas de congestionamento:
+    - Partida lenta
+    - Evitar o congestionamento
+    - Detecção de congestionamento
+
+TIMEOUT:
+    Se o tempo esgotar, existe uma grande chance de congestionamento, provavelmente
+    o segmento foi descargado e não há nenhuma informação sobre os segmentos transmitidos
+
+3 ACKs:
+    Se forem recebidos 3 ACKs, o envio ocorreu, porém ocorreu alguma perca de pacote
+    
+NORMALMENTE O CONTROLE DE CONGESTIONAMENTO NO TEMPO POSSUI UM GRÁFICO DENTE DE SERRA 
+    - Ao passo que o cwnd, chega oa valor do time-out, os pacotes são dropados, e o 
+    cwnd recebe a metade do valor atual, e reinicia o envio de pacotes
+TCP RENO
+

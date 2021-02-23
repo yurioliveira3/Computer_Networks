@@ -1,0 +1,18 @@
+ASSINANTURA DIGITAL: 
+    É O RESUMO (HASH) ASSINADO COM A CHAVE PRIVADA DO TRANSMISSOR 
+
+Transmissor assina o documento, certificando que a mensagem foi assinada por ele mesmo 
+
+- Garantias de quem assinou
+- Custo computacional elevado
+- Aplicação de um hash em cima da mensagem
+    - O hash é assinado 
+- Com o hash é garantido que a mensagem não foi alterada
+    - Se o resumo (hash) calculado for igual ao enviado, a mensagem nao foi alterada 
+
+- Ex de funções hash 
+    - MD5
+    - SHA-1
+
+- Dependendo da função hash, é facil descobrir as palavras geradas por ela 
+- Hash tem um tamanho fixo.

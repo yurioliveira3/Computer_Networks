@@ -1,0 +1,67 @@
+Pooling: 
+
+Modelo clássico de gerenciamento adotado é o pooling:
+    - Porém não temos como saber o tempo correto para realizar as consultas 
+    - Pode ocorrer alguma sobrecarga com mensagens de gerência
+    - Intervalos muito pequenos auxiliam a trazer precisão, porém trazem mais processamento 
+    - Intervalos muito grandes trazem o problema de falta d precisão
+
+- Encontrar um intervalo ótimo é muito complicado, pois depende-se de muitas variáves
+    - Carga normal da rede 
+    - Carga alterada em horários de pico 
+    - Natureza das aplicações 
+
+Cada Ethernet utiliza CSMA/CD na tranmissão  
+    - Colisões podem ocorrer 
+    
+O protocolo Ethernet foi criado com a visão de que todas as estações, seriam interconectadas 
+através de enlaces 
+    - A capacidade de tranmissão é compatrilhada com todas as estações 
+
+PROBE RMON: 
+    - Coletor de dados, cada segmento remoto te um coletor, que se comunica com a estação de
+    gerenciamento da rede 
+    - É um monitor de rede / analisador (wireshark)
+    - Opera em modo promíscuo, processando todos os pacores do segmento
+    - Um mesmo probe pode possuir N interfaces, para processar info de varios segmentos ao  
+    mesmo tempos.
+    - Produzem informações de resumo, incluindo estatisticas de erro e de desempenho 
+    - Pode ser um dispositivo stand-alone cujo propósito é obter e analisar o tráfeto:
+    - Ou pode ser um dispositivo com outras responsabilidades (workstation, srv ou router)
+
+RMON É UM AGENTE SNMP, POSSUI UMA MIB ESPECIFICA
+
+Consigo escutar todas as comunicações dos outros computadores em uma rede LAN?
+Sim e não, pois com os switches, as comunicações ficam entre os 2 enlaces (origem e destino)
+Porém caso o probe estivesse no router, todas as comunicações poderão ser vistas
+Mas independente de estar em um router ou não, as mensagens em broadcast poderão ser vistas,
+lembrando que o MAC é importante pois sempre é mais valioso do que o IP 
+Monitoramento passivo, não existe tráfego gerado, somente é coletado e analisado
+
+Vantagens em utilizar probe RMON ao invés do polling?
+- Operação Off-line
+    - Monitoramento é remoto, a estação de gerência pode estar desligada
+    pois o probe está dentro do switch/router
+
+- Monitoramento preemptivo
+    - Contínuo, e devido ao SNMP, é possível enviar traps para a estação de gerência
+
+- Detecção de problemas e relatórios 
+    - Identificação do problema a partir dos dados
+        - Ex: congestionamento, broadcast storm
+
+- Value-added data 
+    - Análise de alto nível dos dados
+    - Interpretação autônoma 
+    - As informações chegam processadas para o gerente 
+
+- Multiplos gerentes 
+    - 1 monitor pode responder para mais de um gerente, simultaneamente
+
+- MIB RMON 
+    - MIB especifica, com parâmetros configuráveis
+    - Um probe é um agente SNM, que implementa MIB-II e a MIB RMON 
+    
+        
+
+

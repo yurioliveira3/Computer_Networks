@@ -1,0 +1,37 @@
+Considerando que roteamento Vetor Distância ainda apresenta problemas de instabilidade mesmo 
+quando utilizadas as técnicas de "Split Horizon", "Definição de Infinito" e "Poison Reverse",
+descreva uma possível mudança que poderia ser feita de forma a evitar tal problema.
+
+Revisando a literatura, algumas técnicas se propõem a revertem os principais problemas apresentados pelo RIP:
+
+Tempo de Espera (Holddown Timers)
+    Este que cai bem no caso do ultimo exemplo apresentado em aula, esta técnica visa evitar 
+    que atualizações inapropriadas apresentem rotas inexistente para enlaces que não estão disponíveis.
+
+    Por exemplo, quando um roteador recebe uma tabela onde o vizinho, indica que uma rede que estava acesssível
+    agora não está mais, então ele marca a rota como possivelmente inalcançável (possible down) e começa a contar 
+    o tempo de espera. Caso um router vizinho envie uma tabela com o host que antes era inacessível, alegando que 
+    está alcançável, a tabela é atualizada, e o tempo de espera é retirado, porém caso o tempo de espera seja excedido,
+    ou o roteador receber uma atualização de um vizinho diferente, com uma métrica mais fraca ou igual a atual, esta 
+    será descartada. 
+
+    Durante este tempo de espera, para as rotas que aparecem como possivelmente inalcançáveis nas tabelas
+    de roteamento, os roteadores continuam tentando encaminhar os pacotes para ela, pois pode ter acontecido
+    uma pequena variação na rede ou um problema em uma conexão intermediária.
+
+Atualizações Imediatas (Triggered Updates)
+
+    Essa implementação propõe que sejam mandadas atualizações imediatas assim que
+    um roteador perceber uma alteração na rede. O roteador que percebe a mudança passa então 
+    imediatamente aos seus vizinhos esta atualização, estes ao receberem a atualização, também a 
+    passarão imediatamente para seus demais vizinhos e assim a atualização chega mais rapidamente 
+    aos roteadores envolvidos.
+
+    Essa idéia de atualização imediata seria suficiente se pudesse garantir que cada uma destas atualizações
+    chegasse imediatamente aos roteadores apropriados. Porém, em um cenario real os pacores podem ser descartados 
+    ou corrompidos, além de que as as atualizações não ocorrem instantaneamente. É possível que um roteador que ainda
+    não recebeu esta atualização imediata envie sua atualização periódica, fazendo com que seu vizinho que 
+    acabara de atualizar sua tabela devido a atualização imediata que ele recebeu, coloque a rota novamente 
+    em sua tabela.
+
+    

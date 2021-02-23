@@ -1,0 +1,89 @@
+O IETF incluiu melhorias comparado ao IPv4. O protocolo IPv6 pode manipular pacotes de
+maneira mais eficiente, melhorar o desempenho e aumentar a segurança. Ele permite que
+provedores de serviços de internet reduzam o tamanho de suas tabelas de roteamento, 
+tornando-os mais hierárquicos.
+
+Se a sua organização oferece um site público ou aplicativos da internet ou aplicativos 
+móveis, é provável que o site funcione mais rápido ao usar IPv6 do que o IPv4. Isso se 
+deve em parte à proliferação de conversão de endereços de rede (NAT) por provedores de 
+serviços para conectividade com a Internet IPv4.
+
+IPV6:
+ - Cabeçalho simplificado e de tamanho fixo;
+ - Sem verificação de erros;
+ - Controle de fluxo;
+ - Roteamento é realizado mais rápido;
+ - Segurança nativa (IPSec);
+ - Suporte para novos serviços;
+ - Melhor processamento dos pacotes.
+ - Fim-a-Fim
+
+Por ter um cabeçlho mais simples o roteamento do IPV6 é muito mais rápido.
+
+Já o cabeçalho IPv6 possui um tamanho fixo de 40 octetos, graças ao aumento do tamanho 
+dos endereços de origem e destino. No entanto, possui menos campos. Um dos campos 
+retirados foi o de controle de erro, já que este controle é feito na camada de enlace e 
+na camada de transporte, sendo considerado desnecessário neste nível. Estas remoções 
+resultam num processamento mais rápido do cabeçalho, o que aumenta a eficiência de 
+roteamento e a performance geral dos roteadores.
+
+Uma característica muito importante do IPv6 é que ele não executas processos de broadcast.
+As funções em IPv4 que utilizavam processos broadcast, tais como descoberta de roteadores,
+descoberta de vizinhos, entre outros, em IPv6 são tratadas através de multicast.
+
+O multicast permite que pacotes IP sejam enviados para múltiplos destinos ao mesmo tempo,
+sem afetar a performance da rede. O processo multicast melhora a eficiência de uma rede 
+pela limitação de requisição broadcast para um menor número de nós, apenas aqueles 
+interessados. O IPv6 utiliza grupos de endereços multicast específicos para várias 
+funções, que em IPv4 eram feitas através de broadcast, evitando problemas causados por ele.
+
+O serviço QoS – Quality of Service é tratado em IPv6 da mesma maneira que é tratado em 
+IPv4, possuindo suporte por classe de serviço através do campo de tráfego e do modelo 
+DiffServ - Differentiated Services. Entretanto, o cabeçalho IPv6 tem um novo campo 
+chamado flow label, que pode conter um rótulo identificando um fluxo específico de dados. 
+Desta forma, o nó fonte gera uma rota de fluxo com rótulo, disponibilizando QoS nesse 
+caminho, onde cada roteador do caminho toma ações baseadas por esse rótulo.
+
+• Network Programming, since operators need to deliver service fast and provide tailored service
+to meet the specific requirements of customers. This requires the capability for an application to
+encode any complex program as a set of individual functions distributed through the network. In
+this regard, as based on IPv6 data plane, SRv6 programmability concept is relevant.
+
+• Low Latency, with the rising of latency-sensitive applications, the network is required to process
+data with minimal delay and jitter. To achieve this goal, the delay-sensitive data should be
+forwarded along paths that are not overloaded or new queue technique are needed to optimize
+latency. IPv6 can easily be integrated with low latency techniques.
+
+• Network Slicing, some enhanced services require dedicated network resources to achieve
+isolation from other services in the network, and the number of such enhanced services can be
+greater than the number of traffic classes with QoS. This put forward the requirement to create
+multiple unique logical and virtualized networks, namely slicing, over a common infrastructure.
+Both SRv6 and the end-to-end model of IPv6 allow network slicing.
+
+• IoT, such as NB-IoT, has been widely deployed during the past several years. Indeed a strong
+requirement of IoT is related to the addressing and reachability of devices. In this case, the whole
+128-bits address enables more flexibility and can be allocated without using NAT, and some IOT
+applications even require the IPv6 address remain unchanged during the lifetime of the device, so
+they can access and control the devices easily via IPv6 address.
+
+
+[RESPOSTA]
+
+Segundo o IETF, O protocolo IPv6 incluiu melhoras de desempenho, se comparado ao IPv4.
+O protocolo IPv6 pode manipular pacotes de maneira mais eficiente, melhorar o desempenho e aumentar a segurança 
+(IPSec nativo), o que permite principalmente que provedores de serviços de internet reduzam o tamanho de suas tabelas 
+de roteamento, reduzindo consequentemente o atraso de processamento.
+
+Alguns dos principais benefícios do IPv6, segundo a ETSI, em relação a redução no tempo de roteamento, são:
+
+- Cabeçalho simplificado e de tamanho fixo;
+- Eliminação de uma sequência de checksums no cabeçalho;
+- Sem controle de erro (realizado no enlace);
+- Multicast;
+- Fim-a-Fim.
+
+Então devido o IPv6, possuir um tamanho de cabeçalho fixo, isso acelera bastante o processamento dos pacotes pelos 
+roteadores, visto que não há necessidade de calcular a extensão de certos campos, e nem o tamanho do cabeçalho como um 
+todo. Além de que, o número de campos utilizados também foi reduzido, devido a pouca utilidade prática, contribuindo 
+ainda mais para a diminuição do tempo gasto em processamento pelos roteadores.
+

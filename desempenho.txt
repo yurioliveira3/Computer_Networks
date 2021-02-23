@@ -1,0 +1,9 @@
+Desempenho:
+    - Mas desempenho de que? 
+    - Quais caracteristicas 
+
+- Quais caracteristicas de desempenho podem ser identificadas 
+    - Throughput - Capacidade máxima de transmissão 
+
+
+- Informe os valores de pelo menos 2 métricas que conseguiram medir em suas redes.

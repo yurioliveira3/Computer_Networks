@@ -1,0 +1,18 @@
+1) Qual a diferença no processo de abertura de uma associação no SCTP em comparação a abertura de conexão no TCP?
+O TCP, possui o handshake de 3 vias, porém como ele consome um processamento a mais do servidor, e pode ser
+vítima de um ataque de SIN flood, o SCTP, implementou um cookie (bloco de controle), onde após a liberação deste
+pacote, o servidor não fica mais ocioso, guardando informações desnecessárias, e também evitando o SIN flood.
+A sequencia para abertura fica:
+ - cliente envia um INIT; 
+ - servidor envia um INIT ACK (Cookie);
+ - cliente envia um COOKIE ECHO (Cookie);
+ - servidor envia um COOKIE ACK;
+ - [Conexão estabelecida]
+
+2) O cabeçalho do SCTP possui um campo verification tag. Qual o objetivo deste campo?
+É um número de identificação da associação entre o cliente e o servidor, onde todos os pacotes
+transportados por ela, irão carregar esse numero, seu principal o objetivo, é a identificação da associação.
+
+3) Qual a diferença no calculo do checksum do SCTP em comparação ao TCP?
+Para o SCTP, a operação realizada é uma divisão, e não uma soma, como no TCP.
+Este é um método chamado de cyclic redundancy check (CRC), calculado por um algoritmo de CRC32c.

@@ -1,0 +1,30 @@
+Sob uma perspectiva temporal, quais áreas funcionais do modelo FCAPS 
+são mais frequentemente realizadas em curto, médio e longo prazo.
+
+[FCAPS]
+Falhas:
+    Detectar, isolar e eliminar falhas
+    Eventos que trazem efeitos negativos, ex link caiu
+Configuração:
+    Ajustar parametros de gerenciamento (provisionamento)
+Contabilidade:
+    Monitorar estatisticas de uso dos usuarios
+Desempenho:
+    Garantir que o desempenho da rede fique dentro dos 
+    niveis aceitaveis
+Segurança:
+    Controlar acesso aos recursos da redes
+    Decidir quem acessa a rede
+
+
+• Curto prazo 
+    Falhas: A detecção de falhas deve sempre ocorrer o mais breve possível, identificando e isolando o problema quando possível;
+    Desempenho: O monitoramento de indicadores deve ser constante, mantendo sempre a rede com a melhor performance concebível;
+    Segurança: Proteger a rede contra intrusos, garantindo sua integridade.
+• Médio prazo
+    Falhas: Com a falha identificada, e se possível o problema isolado, deve-se iniciar o processo de resolução;
+    Configuração: O provisionamento de um equipamento pode demorar horas, e por não ser crítico, não entra como curto prazo.
+    Segurança: Criação/gerenciamento usuários da rede.
+• Longo prazo
+    Contabilidade: Processo que pode demorar semanas ou meses, registrando o uso da rede pelos usuários;
+    A longo prazo creio que todas as áreas são presentes, como sempre há um aprimoramento em conjunto de todas as áreas, creio que caberia listar todas.

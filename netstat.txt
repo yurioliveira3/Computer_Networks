@@ -1,0 +1,14 @@
+-- FIREFOX
+tcp        0      0 yuri-voalle:49080       ec2-44-239-213-99:https ESTABLISHED 7632/firefox
+
+-- BRAVE
+tcp        0      0 yuri-voalle:51284       mail.syntesis.com:https ESTABLISHED 5166/brave --type=u 
+
+-- SKYPE 
+tcp        0      0 yuri-voalle:54931       52.170.57.27:https      ESTABLISHED 5619/skypefo  
+
+-- KITE 
+tcp        0      0 yuri-voalle:38706       59.216.107.34.bc.:https ESTABLISHED 1284/kited
+
+-- JAVA (DBEAVER)
+tcp6       0      0 yuri-voalle:41310       erp.grupovoalle.com.b:mysql ESTABLISHED 5509/java 

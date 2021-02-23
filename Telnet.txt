@@ -1,0 +1,36 @@
+[PROTOCOLO TELNET (TERMINAL NETWORK)]
+Rodar aplicativos em um computador remoto 
+    - Executar comandos e colher resultados
+
+Criado com a intenção de ser um protocolo genérico
+    - Para qualquer nova aplicação poderia ser empregado o telnet 
+
+Porém, protocolos de aplicação podem ser criados para atingir este objetivo
+    - HTTP, FTP, ...
+
+- Padrão sugerido pela ISO
+- TCP/IP (porta 23)
+- Cliente/Servidor
+
+Resumindo, ele é um protocolo orientado a caracteres, que transporta comandos,
+que serão executador por um computador remoto
+
+Os sistemas terminais podem ser heterogêneos 
+    - Codificação divergente entre os terminais 
+    - Como a camada de apliação é implementada na aplicação, o telnet preve isso 
+    - Conversão dos caracteres para NVT, antes de encaminhar à rede 
+        - Network Virtual Terminal 
+        - Implementa 2 conjuntos
+            - Dados (8 bits)
+            - Controle (8 bits)
+
+Dados diferentes são transportados em uma mesma conexão,
+são distinguidos usando um caracter especial IAC (Interpret as Cnontrol)
+
+Cada tecla "apertada" é enviada pela rede, então quando é apertado o backspace, o interpretador 
+envia uma mensagem de controle, e após ela, remoção de caracter 
+
+Permite a negociação de opções de configuração antes ou durante o uso 
+    - Echo, echo the data recived on one side to the others 
+    - Terminal Type, Set the terminal type 
+

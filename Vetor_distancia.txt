@@ -1,0 +1,63 @@
+Considerando que roteamento Vetor Distância ainda apresenta problemas de instabilidade mesmo 
+quando utilizadas as técnicas de "Split Horizon", "Definição de Infinito" e "Poison Reverse",
+descreva uma possível mudança que poderia ser feita de forma a evitar tal problema.
+
+Tempo de Espera (Holddown Timers)
+
+    O tempo de espera é utilizado para evitar que atualizações inapropriadas ensinem caminhos 
+    inexistentes para enlaces que não estão disponíveis. Com esta técnica, os roteadores esperam 
+    por mudanças que devem afetar rotas, por algum período de tempo. Esse período, por padrão do 
+    RIP, é de 3 vezes o tempo da atualização periódica (por padrão, o RIP manda atualizações 
+    temporárias a cada 30s).
+
+    Situações onde este tempo é utilizado:
+
+    - Quando um roteador recebe uma atualização de um vizinho indicando que uma rede que era 
+    acessível agora não está mais. O roteador então, marca a rota como possivelmente inalcançável
+    (possible down) e começa a marcar seu tempo de espera.
+
+    - Se a atualização de algum vizinho chegar com métrica melhor do que aquela que está na tabela
+    de roteamento do enlace possivelmente inalcançável, o roteador marca o enlace como alcançável
+    e retira o tempo de espera.
+
+    - Se em qualquer momento, antes do tempo de espera estourar, o roteador receber uma 
+    atualização de um vizinho diferente, com uma métrica mais fraca ou igual aquela da rede 
+    possivelmente inalcançável, esta será descartada. Ignorando estas atualizações de métricas
+    piores enquanto estiver em tempo de espera, o roteador que percebeu a mudança dá mais tempo
+    aos demais roteadores para que estes sejam avisados de uma mudança na rede.
+
+    - Durante este tempo de espera, as rotas aparecem como possivelmente inalcançáveis nas tabelas
+    de roteamento. Mesmo com a rota estando no estado de possivelmente inalcançáveis, os 
+    roteadores continuam tentando encaminhar os pacotes para essa rede (talvez esta rede só 
+    esteja tendo um problema de conexão intermediária, oscilação...)
+
+Atualizações Imediatas (Triggered Updates)
+
+    Nos exemplos anteriores, os loops de roteamento foram causados graças as informações erradas 
+    obtidas como resultado de atualizações inconsistentes, convergência lenta e temporização. O 
+    fato dos roteadores esperarem por suas atualizações periódicas para notificar aos demais uma 
+    alteração na rede, faz com que a rede tenha um tempo de convergência mais lento.
+    Normalmente, as atualizações nas tabelas de roteamento são passadas aos demais em um intervalo
+    de tempo constante. Essa ferramenta propõe que sejam mandadas atualizações imediatas assim que
+    um roteador perceber uma alteração na rede. O roteador que percebe a mudança passa então 
+    imediatamente aos seus vizinhos esta atualização, estes ao receberem a atualização, também a 
+    passarão imediatamente para seus demais vizinhos e assim a atualização chega mais rapidamente 
+    aos roteadores envolvidos.
+
+    Essa idéia de atualização imediata seria suficiente se pudesse garantir que cada uma destas atualizações
+     chegasse imediatamente aos roteadores apropriados. Porém, podem ocorrer dois problemas:
+
+    - Os pacotes de atualização podem ser descartados ou corrompidos ao longo de sua trajetória.
+
+    - As atualizações imediatas não ocorrem instantaneamente. É possível que um roteador que ainda não 
+    recebeu esta atualização imediata envie sua atualização periódica, fazendo com que seu vizinho que 
+    acabara de atualizar sua tabela devido a atualização imediata que ele recebeu, coloque a rota novamente 
+    em sua tabela.
+
+    Agora, juntando as atualizações imediatas com o tempo de espera o problema é solucionado. Por que com 
+    o tempo de espera, mesmo que o alguém envie uma atualização temporária antes de receber a atualização 
+    imediata, os demais roteadores que já haviam recebido as atualizações imediatas e haviam posto tal rota
+    como possivelmente inalcançável, ao receberem um caminho alternativo com métrica pior ou igual a que 
+    eles conheciam, não atualizem suas tabelas enquanto o tempo não houver estourado. Isso faz com que a 
+    atualização imediata tenha mais tempo para percorrer todos os roteadores envolvidos antes destes tentarem 
+    divulgar um novo caminho até a rede que foi modificada.

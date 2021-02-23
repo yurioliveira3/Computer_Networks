@@ -1,0 +1,41 @@
+Documentos:
+    Estaticos 
+    Dinamicos 
+    Ativos 
+
+HTTP/1.0:
+    GET 
+    POST 
+    HEAD
+        - asks server to leave requested object out of response 
+    
+HTTP/1.1: [MAIS UTILIZADO ATUALMENTE]
+    GET, POST, HEAD
+    PUT 
+        - uploads file in entity body to path specified in URL field 
+    DELETE 
+        - deletes file specified in the URL field
+    
+HTTP/2: 
+    PUSH
+    TLS 
+    Priorização de requisições (ordem que os recursos são retornados para o usr)
+    Minifying (Compressão)
+    MUltiplexação c/ push (um unico request já retorna todos os documentos)
+
+POST METHOD, informações estão no body da requisição
+    - Solicitações, parametros especificos 
+
+GET, informação é na propria URL 
+
+Cite as vantagens do HTTP/2 sobre a versão 1.1 do protocolo:
+
+Cookies 
+    - Problemas com privacidade do cliente 
+    - Não são compartilhados entre dominios diferentes 
+    - Documentos ativos para coletar informações dos usuarios 
+        - CPU, MEM, Velocidade, Proxy
+        - Informações utilizadas para AD
+
+    - Canvas Fingerprint
+        - Addthis (descoberto em whitehouse.gov)
